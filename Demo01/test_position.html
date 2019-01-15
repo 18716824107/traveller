@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				width: 1263px;
+				margin: 0px;
+			}
+			#d1{
+				width: 100%;
+				height: 100px;
+				background: gray;
+				float: left;
+				opacity: 0.5;
+			}
+			#d2{
+				width: 100%;
+				height: 555px;
+				background: saddlebrown;
+				background-image: url(http://www.wtown.com/Upload/File/201711/5a081b7cba312.jpg);
+				background-size: 100% 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1">
+		</div>
+		<div id="d2"></div>
+		<script>
+			var d2=document.getElementById("d2");
+			d2.onclick=function () {
+				d2.style.backgroundImage="url('http://www.wtown.com/Upload/File/201711/5a081b8bed77d.jpg')"
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				width: 1261px;
+				margin: 0px;
+			}
+			#div-back-first{
+				width:100%;
+				height: 2000px;
+				background:url(img/16.jpg) no-repeat;
+				background-size: cover;
+				background-attachment: fixed;
+			}
+			#div-back-second{
+				width: 100%;
+				height: 2000px;
+				background: url(img/17.jpg) no-repeat;
+				background-size: 100% 100%;
+				background-attachment: fixed;
+			}
+			#div-back-three{
+				width: 100%;
+				height: 2000px;
+				background: url(img/10.jpg) no-repeat;
+				background-size: 100% 100%;
+				background-attachment: fixed;
+			}
+			#absolute-first{
+				width: 100%;
+				height: 1000px;
+				background: #FFFFFF;
+				position: absolute;
+				top:0px
+			}
+			#absolute-second{
+				width: 100%;
+				height: 800px;
+				background: #FFFFFF;
+				position: absolute;
+				top:1800px
+			}
+			#absolute-three{
+				width: 100%;
+				height: 800px;
+				background: #FFFFFF;
+				position: absolute;
+				top:3400px
+			}
+			#absolute-four{
+				width: 100%;
+				height: 1000px;
+				background: #FFFFFF;
+				position: absolute;
+				top:5000px
+			}
+			#absolute-first-head{
+				width: 100%;
+				height: 50px;
+				font:oblique;
+			}
+			#absolute-first-head img{
+				width: 50px;
+				height: 100%;
+			}
+			#absolute-first-head a{
+				text-decoration: none;
+				font: italic small-caps bold 50px "Times New Roman";
+				color: #DDDDDD;
+				position: relative;
+				left: 60px;
+			}
+			#absolute-first-rotation{
+				width:100%;
+				height: 900px;
+				margin-top: 10px;
+			}
+			#absolute-first-rotation #rotation-first{
+				width: 100%;
+				height: 100%;
+				border-radius: 20px;
+			}
+			#icon-arrow-left{
+				position: absolute;
+				top: 500px;
+				left: 50px;
+			}
+			#icon-arrow-right{
+				position: absolute;
+				top: 500px;
+				right: 50px;
+			}
+			#icon-arrow-left:hover{
+				border: 1px solid #808080;
+				cursor: pointer;
+			}
+			#icon-arrow-right:hover{
+				border: 1px solid #808080;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div-back-first">
+		</div>
+		<div id="div-back-second">
+		</div>
+		<div id="div-back-three"></div>
+		<div id="absolute-first">
+			<div id="absolute-first-head">
+				<a href="#">
+					<img src="img/首页-默认.png" >
+					TheAlice
+				</a>
+			</div>
+			<div id="absolute-first-rotation">
+				<img id="rotation-first"  src="img/9.jpg"/>
+				<img id="icon-arrow-left" src="img/icon-arrow-left.png" width="50" height="60"/>
+				<img id="icon-arrow-right" src="img/icon-arrow-right.png" width="50" height="60"/>
+			</div>			
+			
+		</div>
+		<div id="absolute-second">
+			<p>相信这个世界上肯定有人在过着你想要的生活2</p>
+		</div>
+		<div id="absolute-three">
+			<p>相信这个世界上肯定有人在过着你想要的生活3</p>
+		</div>
+		<div id="absolute-four">
+			<p>相信这个世界上肯定有人在过着你想要的生活4</p>
+		</div>
+		
+		<script>
+			var rotations=['img/12.jpg','img/9.jpg','img/8.jpg'];
+			var rotation_first=document.getElementById("rotation-first");
+			var rotation_current;
+			var rotation_left;
+			var rotation_right;
+			var icon_arrow_left=document.getElementById("icon-arrow-left");
+			var icon_arrow_right=document.getElementById("icon-arrow-right");
+			icon_arrow_left.onclick=function(){
+				rotation_current=rotation_first.getAttribute("src");
+				rotation_current_index=rotations.indexOf(rotation_current);
+				if(rotation_current_index==0){
+					rotation_left=rotations[rotations.length-1];
+				}else{
+					rotation_left=rotations[rotation_current_index-1];
+				}
+				rotation_first.setAttribute("src",rotation_left);
+			}
+			icon_arrow_right.onclick=function(){
+				rotation_current=rotation_first.getAttribute("src");
+				rotation_current_index=rotations.indexOf(rotation_current);
+				if(rotation_current_index==rotations.length-1){
+					rotation_right=rotations[0];
+				}else{
+					rotation_right=rotations[rotation_current_index+1];
+				}
+				rotation_first.setAttribute("src",rotation_right);
+			}
+			setInterval(function(){
+				rotation_current=rotation_first.getAttribute("src");
+				rotation_current_index=rotations.indexOf(rotation_current);
+				if(rotation_current_index==0){
+					rotation_left=rotations[rotations.length-1];
+				}else{
+					rotation_left=rotations[rotation_current_index-1];
+				}
+				rotation_first.setAttribute("src",rotation_left);
+			},3000);
+				
+		</script>
+		
+		
+	</body>
+</html>

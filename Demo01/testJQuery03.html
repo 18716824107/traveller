@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>测试jQuery</title>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.d1 {
+				width: 500px;
+				height: 50px;
+			}
+			
+			.d1 img {
+				width: 50px;
+				height: 50px;
+			}
+			
+			.d2 {
+				width: 500px;
+				height: 500px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="d1">
+			<img class="img-11" src="img/12.png" />
+			<img class="img-11" src="img/11.png" />
+			<img class="img-11" src="img/15.png" />
+			<img class="img-11" src="img/4@1x.png" />
+		</div>
+		<div class="d2">
+		</div>
+		<script type="text/javascript">
+			$(".img-11").each(function(i) {
+				$(this).mouseenter($(this), function() {
+					var imgSrc = $(this).attr("src");
+					var backgroudUrl = "url(" + imgSrc + ")";
+
+					$(".d2").css("background-image", backgroudUrl);
+				});
+
+				$(this).mouseleave(function() {
+					$(".d2").css("background-image", "none");
+				});
+			});
+		</script>
+	</body>
+
+</html>

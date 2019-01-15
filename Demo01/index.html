@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			body{
+				margin: 0px;
+			}
+			#div ul li{
+				width: 20%;
+				list-style: none;
+				float: left;
+				text-align: center;
+				font-family: "微软雅黑";
+				line-height: 60px;
+				height: 60px;
+			}
+			#div{
+				width: 100%;
+				height: 60px;
+				background: #ddd;
+			}
+			ul{
+				margin: 0px;
+				padding: 0px;
+			}
+			#div ul li:hover{
+				border-radius: 5px;
+				border-top: 2px solid red;
+				color: red;
+				background: #fff;
+				cursor: pointer
+			}
+			.v1{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div">
+			<ul>
+				<li>
+				新年快乐
+				<div class="v1">
+					<a href="#">快乐</a>
+					<a href="#">快乐</a>
+					<a href="#">快乐</a>
+					<a href="#">快乐</a>
+				</div>	
+				</li>
+				<li>新年快乐</li>
+				<li>新年快乐</li>
+				<li>新年快乐</li>
+				<li>新年快乐</li>
+			</ul>
+		</div>
+		<script>
+			var width=window.screen.width;
+			var bod=document.getElementsByTagName("body")[0];
+			bod.style.width=width+'px';
+		</script>		
+	</body>
+</html>

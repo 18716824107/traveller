@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#bG {
+				position: absolute;
+				left: 0;
+				top: 0;
+				background-color: gray;
+				width: 100%;
+				height: 100%;
+				display: none;
+				opacity: 0.8;
+			}
+			
+			#te {
+				display:none;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 500px;
+				height: 300px;
+				margin-left: -250px;
+				margin-top: -150px;
+				border: 1px solid #888;
+				background-color: #fa0;
+			}
+			
+			span {}
+		</style>
+	</head>
+
+	<body>
+		<p style="cursor:pointer;">登录</p>
+		<div id="bG">
+		</div>
+		<div id="te">
+			<h2>登录界面
+			<div id="re">
+				账号
+				<input type="text" name=""><br> 密码
+				<input type="password" name=""><br>
+				<input class="close" type="button" value="退出"/>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			$("p").click(function() {
+				$("#bG").fadeIn();
+				$("#te").css("display", "block");
+			})
+			$(".close").click(function() {
+				$("#te").css("display", "none");
+				$("#bG").fadeOut();
+			})
+		})
+	</script>
+
+</html>

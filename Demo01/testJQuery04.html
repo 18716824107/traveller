@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>测试jQuery</title>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.d1{
+				width: 100%;
+				height: 100%;
+				background-color: #DDDDDD;
+				display: none;
+				position: fixed;
+				z-index: 1;
+			}
+			h1{
+				position: absolute;
+				top: 40%;
+				left: 50%;
+			}
+			progress{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button class="start">点击我弹出加载界面</button>
+		<div class="d1">
+			<button class="close">点击我就关闭加载界面</button>
+			<h1>正在加载中</h1>
+			<progress class="pro" value="" max="100"></progress>
+		</div>
+		
+		
+		<script type="text/javascript">
+			$(".start").click(function(){
+				$(".d1").fadeIn();
+				var i=0;
+				var int=setInterval(function(){
+					i+=10;
+					console.log(i)
+					$(".pro").attr("value",i);
+					if(i==100){
+						$("h1").html("加载完成");
+						$(".pro").css("display","none");
+						window.clearInterval(int);
+					}
+				},500);
+				
+			});
+			$(".close").click(function(){
+				$(".d1").fadeOut();
+				$("h1").html("正在加载中");
+				$(".pro").attr("value","");
+				$(".pro").css("display","block");
+			});
+		</script>
+		
+	</body>
+
+</html>

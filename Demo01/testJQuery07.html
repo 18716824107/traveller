@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<style type="text/css">
+			#d1,#d1>img,#hidden{
+				width: 600px;
+				height: 500px;
+				transition: all 1s;
+			}
+			#d1{
+				position: relative;
+				overflow: hidden;
+			}
+			#d1>img{
+				transition:all 1s;
+			}
+			#hidden{
+				background-color: rgba(0,0,0,.3);
+				position: absolute;
+				top:0px;
+				left: 100%;
+				transition: all 2s;
+			}
+			#d1:hover #hidden{
+				left:0px;
+			}
+			#d1:hover img{
+				-webkit-transform: scale(1.1);
+			}
+			#hidden>h2{
+				color: #FFFFFF;
+				text-align: center;
+				line-height: 500px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div id="d1">
+			<img src="img/12.jpg"/>
+			<div id="hidden">
+				<h2>美丽的夏威夷</h2>
+			</div>
+		</div>
+		
+		
+		<script>
+		</script>
+	</body>
+
+</html>

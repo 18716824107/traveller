@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>TheAlice | 遇见另一个自己</title>
+		<link href="img/储蓄罐.ico" rel="SHORTCUT ICON" />
+		<style>
+			body {
+				margin: 0px;
+			}
+			
+			#head {
+				width: 100%;
+				height: 550px;
+				background: url(img/11.png);
+				background-size: 100% 100%;
+			}
+			
+			#head-top {
+				width: 100%;
+				height: 50px;
+				background: rgba(23, 58, 113, 0);
+			}
+			
+			#head-top>img {
+				width: 50px;
+				height: 100%;
+				position: relative;
+				left: 98px;
+			}
+			
+			#title {
+				text-decoration: none;
+				font: italic small-caps bold 50px "Times New Roman";
+				color: #DDDDDD;
+				position: relative;
+				left: 60px;
+			}
+			
+			#head-top>p {
+				color: #FFFFFF;
+				display: inline-block;
+				position: relative;
+				top: -25px;
+				left: 101px;
+				height: 50px;
+			}
+			
+			#select-city {
+				color: #FFFFFF;
+				margin: 0px;
+				padding: 0px;
+				width: 50px;
+				height: 50%;
+				background: rgba(23, 58, 113, 0);
+				border: none;
+				position: relative;
+				left: 27px;
+				top: -5px;
+			}
+			
+			#select-city:hover {
+				color: black;
+			}
+			
+			#select-city option {
+				background: rgba(23, 58, 113, 0);
+			}
+			
+			#head-container {
+				width: 600px;
+				position: absolute;
+				top: 121px;
+				left: 337px;
+			}
+			
+			#list-div ul {
+				margin-left: 50px;
+			}
+			
+			#list-div ul li {
+				width:71px;
+				height: 71px;
+				margin: 10px;
+				padding: 5px;
+				list-style: none;
+			}
+			
+			#list-div img {
+				width: 70px;
+				height: 70px;
+				opacity: 0.5;
+				border-radius: 10px;
+			}
+			
+			#list-div img:hover {
+				border: 1px solid;
+				opacity: 1;
+				box-shadow: black 0px 0px 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="head">
+			<div id="head-top">
+				<a id="title" href="#">
+					TheAlice
+				</a>
+				<img src="img/finland.png" />
+				<p>Destination</p>
+				<select id="select-city" name="city">
+					<option value="1">重庆</option>
+					<option value="2">成都</option>
+					<option value="3">丽江</option>
+				</select>
+
+				<div id="head-container">
+					<h1 style=" margin:5px ;color: #FFFFFF;text-align: right;font-size: 30px;letter-spacing: 10px;">
+						SUNNTY		
+					</h1>
+					<h2 style="margin:10px ;color: #FFFFFF;text-align:center ;font-size: 80px; letter-spacing: 54px;">
+						GREECE
+					</h2>
+					<h3 style="margin:10px ;color: #FFFFFF;text-align:left ;font-size: 20px;">
+						FEEL THE ATMOSPHERE
+					</h3>
+				</div>
+				<div id="list-div">
+					<ul>
+						<li>
+							<img class="photo" />
+						</li>
+						<li>
+							<img class="photo" />
+						</li>
+						<li>
+							<img class="photo" />
+						</li>
+						<li>
+							<img class="photo" />
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			var body = document.getElementsByTagName("body")[0];
+			body.style.width = window.screen.width;
+			var photos = ["img/4@1x.png", "img/15.png", "img/12-1.png", "img/9@1x.png"];
+			var photoImgs = document.getElementsByClassName("photo");
+			var headNode = document.getElementById("head");
+
+			for(var i = 0; i < photos.length; i++) {
+				photoImgs[i].setAttribute("src", photos[i]);
+			}
+			
+			function AddImgClickEvent() {
+				for(var i = 0; i < photoImgs.length; i++) {
+					photoImgs[i].onmouseover = function() {
+						var headBgImage=getComputedStyle(headNode, "style").backgroundImage;
+						var photoImage= this.getAttribute('src');
+						var regExp=new RegExp(photoImage).test(headBgImage);
+						if(regExp){
+						}else{
+						headNode.style.backgroundImage= "url(" + photoImage + ")";							
+						}
+					}
+				}
+			}
+			AddImgClickEvent();
+		</script>
+	</body>
+
+</html>
