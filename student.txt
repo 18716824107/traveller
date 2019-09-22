@@ -1,1 +1,19 @@
 hello world
+
+JMX
+RMI
+spring mvc
+mybatis
+spring
+spring boot
+ajax
+javascript
+vue
+linux
+shell
+git
+svn
+
+
+and so on
+
